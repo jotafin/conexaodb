@@ -2,7 +2,7 @@
 
 > Conectando projeto web com banco de dados Postgresql"
 
-[![Author](https://img.shields.io/badge/author-jotafin-ff9000?style=flat-square)](https://github.com/jotafin)[![Languages](https://img.shields.io/github/languages/count/jotafin/conexaodb?color=%23ff9000&style=flat-square)](#)[![Stars](https://img.shields.io/github/stars/NomeDeUsuario/conexaodb?color=ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/stargazers)[![Forks](https://img.shields.io/github/forks/jotafin/conexaodb?color=%23ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/network/members)[![Contributors](https://img.shields.io/github/contributors/jotafin/conexaodb?color=ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/graphs/contributors)
+[![Author](https://img.shields.io/badge/author-jotafin-ff9000?style=flat-square)](https://github.com/jotafin)[![Languages](https://img.shields.io/github/languages/count/jotafin/conexaodb?color=%23ff9000&style=flat-square)](#)[![Stars](https://img.shields.io/github/stars/jotafin/conexaodb?color=ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/stargazers)[![Forks](https://img.shields.io/github/forks/jotafin/conexaodb?color=%23ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/network/members)[![Contributors](https://img.shields.io/github/contributors/jotafin/conexaodb?color=ff9000&style=flat-square)](https://github.com/jotafin/conexaodb/graphs/contributors)
 
 
 <br />
