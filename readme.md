@@ -76,8 +76,100 @@ node index.js
 
 - Abra o navegador e vá para `http://localhost:3000`.
 
-# :closed_book: Licença
 
+
+
+# :rocket: Passo 1: INTEGRANDO COM ELECTRON
+
+- Instale o electron através do comando:
+
+npm install --save-dev electron
+
+
+- Configure o package.jason
+
+{
+  "name": "hoje",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "electron": "^31.2.1"
+  }
+}
+
+- Configure o main.js para inicializar 
+Consultar a documentação do electron
+
+- Função para iniciar o servidor Node.js (adicionar junto ao main.js):
+
+// Função para iniciar o servidor Node.js
+function startServer() {
+    const serverProcess = spawn('node', ['index.js']); //arquivo que foi configura o banco de dados
+
+    serverProcess.stdout.on('data', (data) => {
+        console.log(`Servidor Node.js: ${data}`);
+    });
+
+    serverProcess.stderr.on('data', (data) => {
+        console.error(`Erro no servidor Node.js: ${data}`);
+    });
+
+    serverProcess.on('close', (code) => {
+        console.log(`Servidor Node.js encerrado com código ${code}`);
+    });
+
+    return serverProcess;
+}
+
+- Configurar o electron para abrir no servidor node:
+
+function createWindow () {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  })
+
+  win.loadURL('http://localhost:3000') //link do servidor do node
+}
+
+app.whenReady().then(() => {
+    //inicializando o servidor node
+    const serverProcess = startServer();
+  createWindow()
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
+  })
+  // Encerra o servidor Node.js quando o Electron for fechado
+  app.on('before-quit', () => {
+    serverProcess.kill();
+});
+# :rocket: Passo 2: EXECUTANDO COM ELECTRON
+- Certifique-se de que todas as dependências estejam instaladas:
+npm install electron express pg
+
+-Execute o electron
+npm start
+
+
+# :closed_book: Licença
 Lançado em 2024.
 Este projeto esta sob a licença [MIT license](https://github.com/NomeDeUsuario/NomeRepositorio/master/LICENSE).
 
